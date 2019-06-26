@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ToDo:list</title>
+		<!-- Stylesheet -->
+		<link rel="stylesheet" type="text/css" href="todo.css">
+	</head>
+	<body>
+		<section class="container">
+			<div id="task" class="todo-task">
+				<h1> ToDo: List </h1>
+				<hr>
+				<div class="task-input">
+					<input type="text" name="todo" id="todo" class="todo-input" placeholder="Add your new task" autofocus>
+					<span onclick="addTask()" class="add-btn">Add</span>
+				</div>
+				<div class="todo-output">
+					<div id="output-color" class="output-box">
+						<h2 id="task-output"></h2>
+						<h4>Complete</h4>
+					</div>					
+				</div>
+			</div>
+
+			<div id="list" class="todo-list">
+				<div class="list-header">
+					<h1 id="list-name"> TASK </h1>
+					<hr>
+				</div>
+				<div class="goright">
+					<div class="push"></div>
+					<div class="content">
+						<ul id="ulist" class="">
+							<h1 id="empty-list">Your list is empty, add some tasks!</h1>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Javascript -->
+		<script src="todo.js"></script>
+	</body>
+</html>
