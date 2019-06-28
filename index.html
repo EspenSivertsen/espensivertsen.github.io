@@ -6,22 +6,49 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="icon" type="image/png" href="gooseicon.ico">
+	<link rel="icon" type="image/png" href="icon.ico">
 	<title>Espen Sivertsen</title>
 
 	<!-- Custom styles for this template -->
 	<link href="css/index.css" rel="stylesheet">
 </head>
 <body>
+
 	<div class="container">
 
-		<div id="header">
+		<!-- Navbar -->
+		<div id="navbar" class="nav">
+			<div class="nav-logo">
+				<a href="index.html"><img src="static/img/github_avatar.png" height="150px"></a>
+			</div>
+			<div class="nav-list">
+				<ul class="nav">
+					<a href="index.html" class="active-nav"><li>Home</li></a>
+					<a href="index.html#games"><li>Games</li></a>
+					<a href="index.html#videos"><li>Videos</li></a>
+					<a href="www.beingadeveloper.com"><li>Blog</li></a>
+					<a href="javascript:void(0);" class="icon" onclick="responsenav()">&#9776;</a>
+				</ul>
+			</div>
+		</div>
+
+		<div id="header"> 
 			<h1>Hello World</h1>
-			<p>I'm hosted with GitHub Pages.</p>
+			<p>I'm hosted with GitHub Pages. WIP</p>
 		</div> <!-- /header -->
 
 		<div class="content">
-			<div class="projects">
+			<div id="games">
+				<h1>Games</h1>
+			</div>
+
+			<div id="espen">
+				<div class="box">
+
+				</div>
+			</div>
+
+			<div id="projects">
 				<h1>Projects</h1>
 				<ul>
 					<li><a href="projects/ToDoList/todo.html">Todo List</a></li>
@@ -32,14 +59,14 @@
 
 		<div id="footer">
 			<div class="footer-wrap">
-				<div class="footer-logo">
-					<a href="#"><img src="img/logohorizontalnogoose.png"></a>
-				</div>
+				<!--<div class="footer-logo">
+					<a href="#"><img src="static/img/github_avatar.png"></a>
+				</div>-->
 				<ul class="footer-navbar">
 					<a href="index.html#games"><li>Contact</li></a>
 					<a href="index.html#games"><li>Games</li></a>
 					<a href="index.html#games"><li>Blog</li></a>
-					<a href="#" class="social-icons facebook" style="margin-left: 1.5em">&#64;</a>
+					<a href="#" class="social-icons github" style="margin-left: 1.5em">&#64;</a>
 					<a href="#" class="social-icons twitter">&#64;</a>
 					<a href="#" class="social-icons youtube">&#64;</a>
 				</ul>
@@ -47,6 +74,9 @@
 		</div> <!-- /footer -->
 
 	</div> <!-- /container -->
+
+	<!-- Javascripts -->
+	<script src="static/js/navresponsive.js"></script>
 
 </body>
 </html>
