@@ -7,10 +7,10 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: Boston,Helvetica Neue,Helvetica,Arial,sans-serif;
-    color: #89899a;
+    color: #c4c4c4;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-	background-color: #e6e6e6;
+	background-color: #353535;
 	/*background-image: url("../img/bg.jpg");
 	background-size: 10px 20px;
 	background-repeat: repeat;*/
@@ -31,9 +31,9 @@ body {
 	flex-wrap: wrap; justify-content: space-between;
 	margin-top: 50px;
 	flex-grow: 1;
-	border-bottom: 1px solid #e6e6e6; border-right: 1px solid #e6e6e6;
 }
 
+ul { padding: 0; margin: 0; }
 
 /*  NAVBAR  */
 #navbar {
@@ -89,17 +89,31 @@ body {
 }
 
 #espen {}
-.box {
+.card {
 	width: 450px;
 	height: 250px;
 	border: 1px solid #000;
+	background-color: #f2f2f2;
 	-webkit-box-shadow: 6px 8px 15px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 6px 8px 15px 0px rgba(0,0,0,0.75);
 	box-shadow: 6px 8px 15px 0px rgba(0,0,0,0.75);
 }
+.card-img {
+	margin: 1em;
+	width: 120px;
+	height: 150px;
+	border: 1px solid #000;
+}
 
 #projects {
 
+}
+
+#projects a:visited { color: #808080; }
+#projects a:hover { color: #00ace6; }
+#projects ul {
+	list-style-position: inside;
+    /*text-align: left; Both kinda look good */
 }
 
 
@@ -111,7 +125,17 @@ body {
   /*justify-content: space-between; only if using logo */
   justify-content: center;
   align-items: center;
-  padding: 40px 0 20px 0;
+}
+
+#footer li { display: inline-block; margin: 0 10px; }
+#footer ul li:hover { color: #00ace6; transition: color .2s ease-out; cursor: pointer; font-weight: bold; }
+#footer li::after {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
 }
 
 .social-icons { margin-right: 0; }
@@ -124,9 +148,14 @@ body {
   text-decoration: none; 
   align-self: flex-end;
 }
-.footer-navbar a { text-decoration: none; color: #000; }
-.footer-navbar li { display: inline-block; margin-left: 1.5em; }
-.footer-navbar li:hover { color: #fff; transition: color .2s ease-out; cursor: pointer;} 
+.footer-navbar a { text-decoration: none; color: #808080; }
+.social-icons { color: color: #808080; }
+.atSymbol { color: #00ace6; }
+.github:hover span.TextGit { color: #fff }
+.github:hover span.TextHub { color: #000 }
+.twitter:hover span.TextTwitter { color: #00acee }
+.youtube:hover span.TextYou { color: #c4302b }
+.youtube:hover span.TextTube { color: #fff }
 
 .footer-logo { align-self: center; }
 .footer-logo img {
