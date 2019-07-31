@@ -72,10 +72,6 @@ function addTask() {
       output();  
     }
   }
-    /* BUG: When deleting two checked box after each other, it doesn't reset score by -1 on second 
-       BUG: WHen deleting item that are incomplete it still reset score by -1 regardless if its incomplete.. FIX: if remove outPutDone -= 1 from remove item, but
-    */
-
   
   /*for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {

@@ -40,7 +40,7 @@ hr {
 	width: 75%;
 }
 
-#list h1, #list hr {
+#list-name, #list hr {
     text-align: left;
     margin-left: 60px;
 }
@@ -185,4 +185,56 @@ ul li:hover {
 #empty-list {
     color: #d9d9d9;
     font-size: 35px;
+}
+
+
+/*    RESPONSIVE    */
+
+/*  Container  */
+@media screen and (max-width: 700px) {.container{ width: 100%; max-width: 100%;} .content{margin-top: 70px;}}
+
+/*  Navbar  */
+@media screen and (max-width: 700px) {
+    .container {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    ul { width: 90%; }
+    #task {
+        position: static;
+        float: none;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+    .task-input { margin: 1em; }
+    .todo-output { position: static; width: auto; }
+    #task hr { display: none; }
+
+
+    #list {
+        margin: 0;
+        width: 100%;
+    }
+    .list-header {
+        position: static;
+        height: 0;
+    }
+    .goright { margin: 0; }
+    .push { margin-top: 1em; margin-bottom: 0; }
+    #empty-list { margin: 0; margin-top: 2em; }
+
+
+}
+
+@media screen and (max-width: 500px) {
+    .output-box {
+        border: none;
+        width: auto;
+        height: auto;
+    }
+    #list-name { margin-left: 30px; }
+    #list hr { margin-left: 30px; }
 }
