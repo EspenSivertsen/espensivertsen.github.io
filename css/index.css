@@ -46,7 +46,7 @@ ul { padding: 0; margin: 0; }
 	font-weight: 550;
 	font-size: 16px;
 }
-#navbar ul li:hover { border-bottom: 1px solid #fff; color: #00ace6; transition: color .2s ease-out; cursor: pointer;}
+#navbar ul li:hover { border-bottom: 1px solid #fff; color: #ccc900; transition: color .2s ease-out; cursor: pointer;}
 .nav-logo, .nav-list {display: flex; }
 .nav-logo { float: left; align-items: center; }
 .nav-list { float: right; align-items: center; }
@@ -79,18 +79,27 @@ ul { padding: 0; margin: 0; }
 	line-height: 2.5em;
 	margin-left: 1.5em;
 }
-.active-nav li { color: #00ace6; }
+.active-nav li { color: #fffc36; }
 .nav .icon {display: none;}
 
 
 
-#games {
-
+#games { width: 100%; }
+#games img {
+	max-width: 200px;
+	width: 100%;
+	height: auto;
+	border: 1px solid #fffc36;
+	border-radius: 50%;
 }
 
-#espen {}
+#espen {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
 .card {
-	width: 450px;
+	max-width: 450px;
 	height: 250px;
 	border: 1px solid #000;
 	background-color: #f2f2f2;
@@ -100,17 +109,41 @@ ul { padding: 0; margin: 0; }
 }
 .card-img {
 	margin: 1em;
-	width: 120px;
-	height: 150px;
+	margin-right: 0;
+	max-width: 120px;
+	width: 100%;
+	height: auto;
+	/*height: 120px;*/
 	border: 1px solid #000;
+	/*border-radius: 50%;*/
+}
+.card-img img {
+	width: 100%;
+	height: 100%;
+	/*border-radius: 50%;*/
+}
+.card-title {
+	margin: 0 1em;
+	color: #000;
+}
+.card-title h1 {
+	margin: 0;
+	margin-top: 10px;
+}
+.card-top {
+	display: flex;
+	width: 100%;
+}
+.card-bottom {
+	display: flex;
+	flex-direction: column;
 }
 
-#projects {
+#projects { position: absolute; }
 
-}
-
-#projects a:visited { color: #808080; }
-#projects a:hover { color: #00ace6; }
+#projects a:link { color: #fffc36; text-decoration: none; }
+#projects a:visited { color: #44AF69; }
+#projects a:hover { color: #F18F01; text-decoration: underline; }
 #projects ul {
 	list-style-position: inside;
     /*text-align: left; Both kinda look good */
@@ -119,16 +152,17 @@ ul { padding: 0; margin: 0; }
 
 
 /*  FOOTER  */
+#footer {}
 .footer-wrap {
   display: flex;
-  flex-flow: row wrap;
+  /*flex-flow: column wrap;*/
   /*justify-content: space-between; only if using logo */
   justify-content: center;
   align-items: center;
 }
 
 #footer li { display: inline-block; margin: 0 10px; }
-#footer ul li:hover { color: #00ace6; transition: color .2s ease-out; cursor: pointer; font-weight: bold; }
+#footer ul li:hover { /*color: #00ace6;*/color: #fffc36; transition: color .2s ease-out; cursor: pointer; font-weight: bold; }
 #footer li::after {
     display: block;
     content: attr(title);
@@ -136,6 +170,11 @@ ul { padding: 0; margin: 0; }
     height: 0;
     overflow: hidden;
     visibility: hidden;
+}
+#footer li span {
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
 }
 
 .social-icons { margin-right: 0; }
@@ -150,7 +189,7 @@ ul { padding: 0; margin: 0; }
 }
 .footer-navbar a { text-decoration: none; color: #808080; }
 .social-icons { color: color: #808080; }
-.atSymbol { color: #00ace6; }
+.atSymbol { color: #fffc36; }
 .github:hover span.TextGit { color: #fff }
 .github:hover span.TextHub { color: #000 }
 .twitter:hover span.TextTwitter { color: #00acee }
@@ -187,6 +226,13 @@ ul { padding: 0; margin: 0; }
 	#header { margin-top: 50px; }
 	.nav-list { align-items: baseline; }
 	#navbar ul li { color: #fff; }
+}
+
+@media screen and (max-width: 1100px) {
+	.content { justify-content: space-around; }
+	#espen { order: 1; width: 100%; display: flex; justify-content: center; }
+	#projects { order: 2; position: unset; }
+	#games { order: 3; }
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
@@ -230,7 +276,7 @@ ul { padding: 0; margin: 0; }
 
 /*  FOOTER */
 @media screen and (max-width: 1100px) {
-  .footer-wrap { flex-direction: column; }
+  /*.footer-wrap { flex-direction: column; }*/
   .footer-social { text-align: center; }
   .footer-logo, .footer-social { width: 100%; max-width: 100%; }
   .footer-navbar { margin-bottom: 20px; }
