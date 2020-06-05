@@ -1,0 +1,1292 @@
+/*
+FILENAME: style.css
+
+WRITTEN BY: Andr� F, Andreas R, Espen S, Kim-Erling R, Marius I.S
+Created as part of a website creation project for the NTNU course IT2805 WEBTEK H�ST 2016.
+
+WHEN: October / November 2016
+
+PURPOSE: Style page for the entire site. Gathers all general styling, resued classes etc. Mostly categorized by element after.
+*/
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Verdana,"Helvetica Neue",Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 70%;
+  background-image: url(../Images/header.png);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@font-face {
+  font-family: chalk;
+  src: url('../Fonts/whatever it takes.ttf');
+}
+/* Add a little padding top & bottom to all sections */
+section {
+  padding: 100px 0;
+}
+
+.container {
+  display: table;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+/*Animation necessary class*/
+
+.hidden {
+  display: none;
+}
+
+/*
+* ==============================================================================
+* =================================INFORMATION/3 TOP BOXES SECTION==============
+* ==============================================================================
+*/
+
+/*Section containing food menus*/
+#information {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  background-color: #395E66;
+}
+
+/*The box container for the two boxes flanking the opening hours*/
+.info-box {
+  display: inline-block;
+  vertical-align:top;
+  background: #507D7A;
+  position: relative;
+}
+
+/*
+* The paragraphs inside the infobox
+* This one is inherited by alot of other elements
+*/
+.info-box p {
+  cursor: pointer;
+  font-size: 1.3em;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 92%;
+  padding: 3%;
+  color: white;
+  border: 5px solid white;
+}
+
+/*Hover effect*/
+.info-box p:hover{
+  /*border-color: #145675;*/
+  border-color: white;
+  background-color: white;
+  color: #28617c;
+  /*background-color:  #28617c;*/
+  opacity: 1;
+  transition: 0.3s ease;
+}
+
+/*container for the opening hours and for the javascript*/
+.opening {
+	line-height: 150%;
+	color: white;
+	font-weight: 400;
+}
+
+/*Styling the h1*/
+.opening h1{
+  padding-top: 10px;
+  text-decoration: underline;
+}
+
+/*styling for the spans added in the javascript*/
+.opening span {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+/*
+* Setting the styling for the box advertising
+* the weekly food
+*/
+.weekly-food {
+  background-image: url(../Images/burgerproT.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: auto 70%;
+  margin-right: 30px;
+}
+
+/*
+* Setting the styling for the box advertising
+* the beers currently on tap
+*/
+.beer-display {
+  background-image: url(../Images/beerpro3T.png);
+  background-size: auto 70%;
+  background-repeat: no-repeat;
+  background-position: top;
+  margin-left: 30px;
+}
+
+/*container for the opening hours*/
+.rectangle {
+  display: inline-block;
+  font-family: chalk;
+  font-size: 1.7em;
+  background-image: url(../Images/chalkboard.png);
+  background-repeat: none;
+  background-size: 100% 100%;
+  text-align: center;
+}
+
+/*fixed width because of mobile diplay*/
+.rectangle, .info-box{
+  width: 400px;
+  height: 500px;
+}
+/*
+* ==============================================================================
+* ==============================================================================
+*/
+
+
+
+
+
+/*
+* ==============================================================================
+* =================================MOBILE SOLUTION==============================
+* ==============================================================================
+*/
+@media (max-width:1000px) {
+
+  section {
+    padding: 50px 0px;
+  }
+  .rectangle, .info-box {
+    width: 300px;
+    height: 350px;
+    font-size: 1em;
+    margin-top: 30px;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
+  #beer-info-text, #food-info-text {
+    margin-top: 85% !important;
+  }
+
+  .info-box p{
+    font-size: 0.7em !important;
+    line-height: 30px;
+  }
+  #dayMenu, #nightMenu  {
+    width: 300px;
+    height: 50px;
+  }
+
+  #foodMenu p{
+  margin-top: 90%;
+  }
+  .weekly-burger p{
+    margin-top: 90% !important;
+  }
+  .weekly-soup p{
+    margin-top: 90% !important;
+  }
+  .weekly-dessert p{
+    margin-top: 90% !important;
+  }
+  .weekly-burger {
+    margin-top: 30px;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 30px;
+  }
+
+  /*
+  * for the div containing the weekly soup
+  */
+  .weekly-soup {
+    margin-top: 30px;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 30px;
+  }
+
+  /*
+  * for the div containing the weekly dessert
+  */
+  .weekly-dessert {
+    margin-top: 30px;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+  .prev, .next {
+    font-size: 15px !important;
+    padding: 5px !important;
+  }
+
+  .beer-element p{
+    border-width: 2px !important;
+    position: absolute !important;
+    width: 250% !important;
+    left: -100% !important;
+    font-size: 0.7em !important;
+    top: -50% !important;
+  }
+
+  #alkohol-og-helse {
+    font-size: 0.4em !important;
+    border-width: 2px !important;
+    right: 32% !important;
+    top: auto !important;
+    bottom: -30% !important;
+  }
+}
+
+/*
+* ==============================================================================
+* ==============================================================================
+*/
+
+
+
+
+
+
+/*
+* ==============================================================================
+* ================================NAVIGATION BAR================================
+* ==============================================================================
+*/
+#navbar{
+	top:0;left:0; right:0;
+	z-index: 300;
+}
+
+/* Hover effect on navbar links */
+.topnavbar > li > a:hover,
+.topnavbar > li > a:focus:hover {
+  background-color: #145675;
+  font-size: 15px;
+  transition: 0.5s ease;
+}
+
+.navbar-container {
+  background-color: #333;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 20px 0 20px;
+}
+
+ul.topnavbar {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+/* Navbar logo */
+.navlogo {
+  float: left;
+}
+
+.topnavbar li {
+  display: inline-block;
+}
+
+ul.topnavbar li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnavbar li.icon {display: none;}
+
+/* Collapse navbar into 'hamburger' menu */
+@media (max-width:980px) {
+  ul.topnavbar li:not(:first-child) {display: none;}
+  ul.topnavbar li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+/* List elements in navbar list into block elements
+    to display a dropdown list of links */
+@media (max-width:980px) {
+  ul.topnavbar.responsive {position: relative;}
+  ul.topnavbar.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnavbar.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnavbar.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+/*
+* ==============================================================================
+* ==============================================================================
+*/
+
+
+
+
+
+
+/*
+* ==============================================================================
+* ===========================FOOD MENU SECTION==================================
+* ==============================================================================
+*/
+
+/*section containing the weekly menu and links to night and full menus*/
+#foodMenu {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  background-color: #507D7A;
+}
+
+/*
+* for the div containing the weekly burger
+*/
+.weekly-burger {
+  background-image: url(../Images/burgerpro5.png);
+  background-size: auto 70%;
+  background-repeat: no-repeat;
+  background-position: top;
+  margin-right: 30px;
+  background-color: #395E66;
+}
+
+/*
+* for the div containing the weekly soup
+*/
+.weekly-soup {
+  background-image: url(../Images/souppro.png);
+  background-size: auto 70%;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: #395E66;
+}
+
+/*
+* for the div containing the weekly dessert
+*/
+.weekly-dessert {
+  background-image: url(../Images/dessertpro2.png);
+  background-size: auto 70%;
+  background-repeat: no-repeat;
+  background-position: top;
+  margin-left: 30px;
+  background-color: #395E66;
+}
+
+/*Adjusts the value inherited from .info-box p*/
+#foodMenu p{
+  margin-top: 97%;
+}
+
+/*
+* The p elements containing the descriptions of the weekly dishes
+* Adjusts the values inherited from .info-box p
+*/
+#weeklyDessertDesc, #weeklySoupDesc, #weeklyBurgerDesc {
+  position: absolute;
+  margin-top: 30px !important;
+  margin-right: 25px;
+  margin-left: 25px;
+  text-transform: none;
+  font-weight: normal;
+  opacity: 0;
+  background-color: #395E66;
+  transition: opacity 1s ease;
+}
+
+/*Hover effect*/
+#weeklyDessertDesc:hover, #weeklySoupDesc:hover, #weeklyBurgerDesc:hover {
+  border: 5px solid white;
+  color: white;
+  opacity: 0.7;
+}
+/*
+* ==============================================================================
+* ==============================================================================
+*/
+
+
+
+
+
+
+
+/*
+* ==============================================================================
+*	==============================PDF MENUS=======================================
+* ==============================================================================
+*/
+
+/*
+* Class for the pdf menu links
+* Adjusts the values inherited from .info-box p
+*/
+.menuSection{
+  height: 100px;
+	width: 615px;
+	margin-right: 15px;
+	margin-left: 15px;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+	background-color: #395E66;
+	display: inline-block;
+
+}
+
+/*
+* The p element for the link to the full menu.
+* Inherits from .info-box
+*/
+#dayMenu p{
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+}
+
+/*
+* The p element for the link to the night menu.
+* Inherits from .info-box
+*/
+#nightMenu p{
+  margin-top: auto;
+  margin-bottom: auto;
+  position: static;
+}
+
+/* Adjusts the values inherited from .info-box p*/
+.menuSection p{
+	margin-left: auto;
+  margin-right: auto;
+	margin-bottom: 3%;
+	text-align: center;
+}
+/*
+* ==============================================================================
+* ==============================================================================
+*/
+
+
+
+
+
+/*
+* ==============================================================================
+* ===========================BEER MENU SECTION=================================
+* ==============================================================================
+*/
+
+/*Section*/
+#menu {
+  position: relative;
+  width: 100%;
+  background-color: #395E66;
+  z-index: -1000;
+}
+
+/*The transparent background image*/
+#menu-image{
+  position: absolute;
+  left: -10%;
+  top: -1%;
+  opacity: 0.1;
+  width: 90%;
+  max-height: 90%;
+  padding-left: 15%;
+  margin: 0;
+}
+
+/*The container for all of the beer-elements*/
+#beer-container{
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  min-height: 100%;
+  max-height: 100%;
+  position: relative;
+  opacity: 0;
+}
+/*Container for beer-elements + the dots + the arrows*/
+#menu-container{
+  width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  position: relative;
+}
+
+/* =================ARROWS ================= */
+/*Previous and Next arrows*/
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 36px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/*Next arrow*/
+.next {
+  right: 10%;
+  border-radius: 3px 0 0 3px;
+}
+/*Previous arrow*/
+.prev {
+  left: 10%;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/*Navigation dots =====================*/
+.dot {
+  height: 13px;
+  cursor: pointer;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 7px;
+  margin-right: 7px;
+  transition: background-color 0.6s ease;
+}
+.dot:hover {
+  background-color: #717171;
+}
+
+
+/*
+Styling for each beer element.
+=======================================
+*/
+
+/*The surrounding div of each beer element*/
+.beer-element {
+  position: relative;
+  top: 0px;
+  width: 20%;
+  min-width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+
+/*The beer image*/
+.beer-element img {
+  position: relative;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  top: 0px;
+}
+
+/*The name of the beer*/
+.beer-element h2 {
+  text-align: center;
+  display: inline-block;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2vw;
+}
+
+/*
+* The description of the beer.
+* Appears when you hover over the beer image.
+*/
+.beer-element p {
+  position: absolute;
+  height: auto;
+  text-align: center;
+  width: 74%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 3%;
+  top: 15%;
+  font-size: 0.9vw;
+  opacity: 0;
+  color: white;
+  background-color: #395E66;
+  border: 5px solid white;
+  transition: opacity 1s ease;
+}
+
+/*Makes the description appear on hover*/
+.beer-element p:hover {
+  opacity: 0.7;
+}
+
+/*Makes the middle beer in each page a bit bigger*/
+#beer1 {
+  width: 22%;
+}
+
+#alkohol-og-helse {
+  font-size: 0.7vw;
+  color: white;
+  text-transform: uppercase;
+  position: absolute;
+  top: -18%;
+  right: 0%;
+  text-align: center;
+  padding: 10px;
+  border: 3px solid white;
+  text-decoration: none;
+  color: white;
+}
+#alkohol-og-helse:hover{
+    /*border-color: #145675;*/
+  border-color: white;
+  background-color: white;
+  color: #28617c;
+  /*background-color:  #28617c;*/
+  opacity: 1;
+  transition: 0.3s ease;
+}
+/*
+* ==============================================================================
+* ==============================================================================
+*/
+
+
+
+
+
+
+/*
+* ==============================================================================
+* =============================TEASER SECTION===================================
+* ==============================================================================
+*/
+
+#teaser {
+	width: 100%;
+	height: auto;
+	background-color: #507D7A;
+}
+
+.teaser-container {
+	width: 30vw; /*div size*/
+	height: 15vw;
+	display: inline-block;
+	margin: 0px 1vw 0px 1vw;
+	padding: 0px;
+	border-radius: 7px;
+	background-color: #373F51;
+	-webkit-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+}
+
+.teaser-brewing, .teaser-history, .teaser-distill {
+	position: relative;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	border-radius: 7px;
+	background-repeat: no-repeat;
+	-webkit-box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.8);
+	-moz-box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.8);
+	box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.8);
+	-webkit-transition: box-shadow 1s ease-in-out;
+	-moz-transition: box-shadow 0.5s ease-in-out;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.teaser-brewing:hover, .teaser-history:hover, .teaser-distill:hover {
+	-webkit-box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,1);
+	-moz-box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,1);
+	box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,1);
+}
+/*Had to place imgs here to allow for propper styling, especially applying the inset shadow*/
+.teaser-brewing {
+	background-image: url("../Images/bryggeri.jpg");
+	background-size: 100% 100%; /*give true img size*/
+}
+
+.teaser-history {
+	background-image: url("../Images/historie.jpg");
+	background-size: 100% 100%;
+
+}
+
+.teaser-distill{
+	background-image: url("../Images/Destilleri.jpg");
+	background-size: 100% 100%;
+}
+
+.teaser-text {
+	border-radius: 5px;
+    position:absolute;
+    top:0; left: 0;
+	vertical-align:top;
+	background: rgba(80, 124, 121, 0.93);
+    width: 35%;
+    height: 25%;
+    -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+    -webkit-transform: rotate(-17deg) skew(0,0) translate(-20px,-10px);
+}
+
+.teaser-text p{ /*this and the info box css does not scale propperly, and could be remade*/
+    margin: 3% 3% 3% 3%;
+    font-size: 1em;
+    line-height: 160%;
+	border-width: 4px;
+}
+/*
+* ==============================================================================
+* ==============================================================================
+*/
+
+
+
+
+
+/*
+* ==============================================================================
+* =============================ABOUT/CONTACT/BUISINESS SECTION==================
+* ==============================================================================
+*/
+#about h1, #contact h1, #business h1 {
+  font-size: 40px;
+  border-bottom: 1px solid #000;
+  margin: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#about-contact-business {
+  width: 100%;
+  padding: 0;
+  background-color: #387D7A;
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+/* =============================ABOUT SECTION==================*/
+#about {
+  width: 35%;
+  padding: 25px 0;
+  background-color: #477998;
+}
+
+.container-about {
+  width: 100%;
+  text-align: center;
+}
+
+#about-text {
+  margin: 40px;
+  text-align: left;
+}
+
+/* =============================CONTACT SECTION==================*/
+#contact {
+  width: 35%;
+  padding: 25px 0;
+  background-color: #7FB069;
+}
+
+.container-contact {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-map, .contact-phone, .contact-mobile, .contact-mail {
+  display: inline-block;
+}
+
+.contact-list {
+  display: inline-block;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0px 20px;
+}
+
+/* =============================BUSINESS SECTION==================*/
+#business {
+  width: 35%;
+  padding: 25px 0;
+  background-color: #E6AA68;
+}
+
+.container-business {
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+}
+
+.business-text {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.oslo, .telemark {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+}
+
+/* Display boxes under each other on Mobile */
+@media (max-width:800px) {
+  #about-contact-business {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  #about, #contact, #business {
+    width: 100%;
+  }
+}
+
+/*
+* ==============================================================================
+* ==============================================================================
+*/
+
+
+
+
+
+
+/*
+* ==============================================================================
+* =============================GOOGLE MAPS SECTION==============================
+* ==============================================================================
+*/
+#map {
+  height: auto;
+  padding: 0;
+}
+
+/* Input field and sumit button */
+#pac-input, .submit-btn {
+  font-size: 18px;
+  padding: 15px 25px;
+  outline: none;
+  background-color: #fff;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  background-color: #4a80f5;
+  text-align: center;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+/* Buttons for choosing travel option */
+.travel-btn {
+  background-color: #4a80f5;
+  margin-left: 10px;
+  border: 2px solid #fff;
+  border-radius: 20%;
+}
+.travel-btn:hover, .submit-btn:hover {
+  background-color: #2566f4;
+}
+
+/* Set default travel mode to car */
+#car-btn {
+  background-color: #2566f4;
+}
+
+.material-icons {
+  color: #fff;
+}
+
+#directions-icon {
+  float: left;
+}
+
+.submit-btn, #closeDirection, .travel-btn {
+  cursor: pointer;
+  outline: none;
+}
+
+/* The google maps map */
+#map_canvas {
+  width: 100%;
+  height: 600px;
+  float: left;
+}
+
+/* Panel for displaying directions, displays to the right */
+#directionsPanel {
+  display: none;
+  width: 30%;
+  height: 600px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+#route {
+  margin: 20px;
+}
+
+/* Panel above directions panel, displaying travel buttons */
+#floating-panel {
+  z-index: 5;
+  text-align: right;
+  line-height: 30px;
+  padding: 5px;
+  padding-left: 10px;
+  background-color: #4a80f5;
+}
+
+/* Mobile Solution for Google Maps */
+@media screen and (max-width:800px) {
+  .direction-button {
+    display: none;
+  }
+  #directionsPanel, #map_canvas {
+    width: 100%!important;
+  }
+  #route input {
+    padding: 15px 5px;
+    font-size: 10px;
+  }
+}
+/*
+* ==============================================================================
+* ==============================================================================
+*/
+
+
+
+
+
+
+
+
+/*
+* ==============================================================================
+* =============================FOOTER SECTION===================================
+* ==============================================================================
+*/
+footer {
+  height: auto;
+  width: 100%;
+  background-color: #2B303A;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.list-wrapper {
+  display: inline-block;
+  text-align: left;
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+}
+.list-wrapper li {
+  margin-bottom: 20px;
+  color: #fff;
+  list-style: none;
+}
+
+.icon-text {
+  margin-left: 15px;
+}
+
+.icon-footer {
+  vertical-align: middle;
+  border: solid #000;
+  border-width: 10px;
+  background-color: #000;
+  border-radius: 50%;
+}
+.facebook-icon {
+  background-color: #3A589B;
+  border: solid #3A589B;
+  border-width: 10px;
+}
+
+/* Remove Column Count From Mobile */
+@media screen and (max-width:700px) {
+  .list-wrapper {
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+  }
+}
+/*
+* ==============================================================================
+* ==============================================================================
+*/
+
+
+
+
+
+
+
+/*
+* ==============================================================================
+* =============================TABLE RESERVATION SECTION========================
+* ==============================================================================
+*/
+#reservation {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  background-color: #395E66;
+}
+
+/* Just an invisible section, to avoid scrolling to top when hiding reservation section */
+#reservationScroll {
+  padding: 0;
+  height: 0;
+}
+
+#reservation h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  border-bottom: 1px solid;
+  margin: 20px;
+}
+
+/* Div with reservation rules */
+#reservationIndexID {
+  border: 5px solid #fff;
+  width: 40%;
+  background-color: #507D7A;
+}
+
+#reservationIndexID p {
+  text-align: center;
+}
+
+#reservationIndexID li {
+  padding: 10px;
+}
+
+/* Div with the reservation form */
+#reservation-form {
+  border: 5px solid #fff;
+  width: 50%;
+  background-color: #507D7A;
+}
+
+/* Container for the reservation section */
+#formDiv {
+	width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Div with label and input */
+.form-group {
+  vertical-align: middle;
+  margin-bottom: 10px;
+  display: inline-flex;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  display: inline-flex;
+  padding: 10px 20px;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #55595c;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+  vertical-align: middle;
+  width: 150px;
+}
+
+.form-group textarea {
+  width: 300px;
+}
+
+.form-group label {
+  margin-left: 20px;
+  font-weight: bold;
+  display: inline-flex;
+  margin-bottom: .5rem;
+  align-self: center;
+  width: 100px;
+}
+
+/* Make checkbox bigger */
+#rulesID {
+  width: 25px;
+  height: 25px;
+  margin-left: 20px;
+}
+
+/* Submit Button */
+.btn-reserved {
+  margin-left: 20px;
+  background-color: #395E66;
+  color: #fff;
+	display: inline-block;
+  border: 5px solid transparent;
+  padding: 10px 20px;
+  font-size: 25px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.form-group button:hover {
+  border-color: #fff;
+  background-color: #fff;
+  color: #28617c;
+  opacity: 1;
+  transition: 0.3s ease;
+}
+
+/* Display boxes under each other on Mobile */
+@media (max-width:950px) {
+  #formDiv {
+    flex-direction: column-reverse;
+  }
+  #reservationIndexID, #reservation-form {
+    width: 100%;
+    border: none;
+  }
+  .form-group label, .form-group input, .form-group select, .form-group textarea {
+    display: inline-block;
+  }
+  .form-group textarea {
+    width: 150px;
+  }
+}
+
+/*
+* ==============================================================================
+* ==============================================================================
+*/
+
+
+/*
+* ==============================================================================
+* ============================= LEGACY.HTML ====================================
+* ==============================================================================
+*/
+
+#information, #distillation{
+    background-color: #395E66;/**#395E66;*/
+}
+#brewing{
+    background-color: #507D7A;
+}
+
+/* Container for images */
+div.imageContainer{
+  margin: 20px;
+  width: 30vw;
+  float: right;
+  border: 5px solid;
+  border-color: #FFF;
+  text-align: center;
+}
+.imageContainer img{
+  width: 25vw;
+  height: auto;
+  margin: 30px auto;
+  margin-bottom: 0;
+}
+
+div.desc {
+  font-size: 1.1em;
+  margin: 10px;
+  font-family:Verdana,"Helvetica Neue",Arial,sans-serif;
+  color: white;
+}
+
+.sectHeadContainer{
+  width: 10wv;
+}
+.paragraphContainer{
+  margin: 40px;
+  width: 60%
+}
+.h3Line{
+  margin: 0;
+  width: 30vw;
+  text-align: left;
+}
+
+.legacy-container h2, #brewing h2, #distillation h2{
+  font-size: 40px;
+  margin: 20px;
+  border-bottom: 1px solid #FFF;
+  color: white;
+  text-transform: uppercase;
+}
+.legacy-container p, #brewing p, #distillation p, .legacy-container h3, #brewing h3, #distillation h3 {
+  color: #FFF;
+  word-wrap: break-word;
+  margin-bottom: 0;
+}
+
+/* Banner for Legacy.html */
+#legacy-banner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url(../Images/legacy_banner.jpg);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

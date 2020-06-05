@@ -1,0 +1,2 @@
+beer image dimensions: 500*800px
+

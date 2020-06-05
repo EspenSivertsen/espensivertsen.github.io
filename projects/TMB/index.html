@@ -1,0 +1,365 @@
+<!Doctype html>
+<!--
+FILENAME: index.html
+
+WRITTEN BY: André F, Andreas R, Espen S, Kim-Erling R, Marius I.S
+Created as part of a website creation project for the NTNU course IT2805 WEBTEK HØST 2016.
+
+WHEN: October / November 2016
+
+PURPOSE: Landing and main page for TMB.no . A scroll page covering the functionality of multiple older standalone pages.
+Many elements, pieces of functionality, and components gather here.
+ -->
+<html lang="nb">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Trondhejm Mikrobryggeri</title>
+    <link rel="icon" type="image/ico" href="Images/Icons/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="Style/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body onload="initialize()">
+    <!-- Header Intro -->
+    <header id="header">
+      <div class ="scroll"></div>
+    </header>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-default"></nav>
+
+    <!-- Information Section, three box elements -->
+    <section id="information">
+      <div class="container">
+      <!-- left -->
+        <div class="info-box weekly-food">
+          <p onclick="OnclickRedirect(foodMenu)" id="food-info-text">
+            Sulten? <br>
+            se vår mat meny!
+          </p>
+        </div>
+        <!-- middle -->
+        <div class="rectangle">
+          <div class="opening">
+            <h1> Åpningstider </h1>
+            <!-- Is populated with the opening hours, from dayOfTheWeek.js -->
+            <p id="openingHoursID"></p> <!-- For Styling, spans are added instead of spaces. Style these for better spacing.  -->
+            <!-- From dayOfTheWeek.js, is it open or not -->
+            <p id="openingHoursAddID"></p>
+          </div>
+        </div>
+        <!-- right -->
+        <div class="info-box beer-display">
+          <p onclick="OnclickRedirect(menu)" id="beer-info-text">
+            Vi har nå 9 øl på tapp <br>
+            se vår øl-meny!
+          </p>
+        </div>
+      </div> <!-- Container -->
+    </section> <!-- Information Section -->
+
+  <!-- Menu Food and Beer Section -->
+	<section id="foodMenu">
+    <div class="container">
+		  <div class="info-box weekly-burger">
+      <p id="weeklyBurgerDesc">  </p>
+          <p onclick="displayDesc(weeklyBurgerDesc)">
+            ukas burger
+          </p>
+       </div>
+       <div class="info-box weekly-soup">
+       <p id="weeklySoupDesc">  </p>
+          <p onclick="displayDesc(weeklySoupDesc)">
+            ukas suppe
+          </p>
+       </div>
+       <div class="info-box weekly-dessert">
+       <p id="weeklyDessertDesc"> </p>
+          <p onclick="displayDesc(weeklyDessertDesc)">
+            ukas dessert
+          </p>
+			</div>
+      <div id="dayMenu" class="info-box menuSection">
+        <div>
+            <a href="http://tmb.no/images/Mikro_meny_sommer%202016_web%20.pdf" target="_blank" style="text-decoration: none; color: inherit;" >
+              <p>Se full meny</p>
+            </a>
+        </div>
+      </div>
+      <div id="nightMenu" class="info-box menuSection">
+        <div>
+            <a href="menus/nattmeny.pdf" target="_blank" style="text-decoration: none; color: inherit;" >
+              <p>Se nattmeny</p>
+            </a>
+        </div>
+      </div>
+    </div>
+	</section>
+  <!-- Beer Menu -->
+  <section id="menu">
+      <img id="menu-image" src="Images/kornTransp.png" alt="Korn">
+      <div id="menu-container">
+        <div id="beer-container">
+
+          <div id="beer0" class="beer-element"></div>
+          <div id="beer1" class="beer-element"> Your browser does not support Java Script</div>
+          <div id="beer2" class="beer-element"></div>
+        </div>
+          <a class="prev" onclick="previous()"> &lt; </a>
+          <a class="next" onclick="next()"> &gt; </a>
+          <br>
+          <div id="dot-container" style="text-align:center"></div>
+          <a id="alkohol-og-helse" href="https://helsenorge.no/rus-og-avhengighet/alkohol/alkoholens-virkning-pa-kroppen" target="_blank">
+            <b>Alkohol og helse</b> <br>
+            Slik virker alkohol på kroppen
+          </a>
+      </div> <!-- Container -->
+  </section> <!-- Beer Menu -->
+
+    <!-- Teaser Section, links to legacy.html  -->
+    <!-- Event listeners shouls go on the box-image divs -->
+    <section id="teaser">
+      <div class="container">
+        <div class="teaser-container">
+          <a href="legacy.html#brewing">
+          <div class="teaser-brewing">
+            <div class="teaser-text info-box"><p>BRYGGERI</p></div>
+          </div>
+          </a>
+        </div>
+
+        <div class="teaser-container">
+          <a href="legacy.html#information">
+          <div class="teaser-history">
+            <div class="teaser-text info-box"><p>HISTORIE</p></div>
+          </div>
+          </a>
+        </div>
+
+        <div class="teaser-container">
+          <a href="legacy.html#distillation">
+          <div class="teaser-distill">
+            <div class="teaser-text info-box"><p>DESTILLERI</p></div>
+          </div>
+          </a>
+        </div>
+      </div> <!-- Container -->
+    </section> <!-- Teaser Section -->
+
+    <!-- Table Reservation Section -->
+    <!-- Should be a dynamically apearing - dissapearing section. By default it should not display.-->
+    <section id="reservationScroll"></section>
+    <section id="reservation" class="hidden">
+    	<div id="formDiv" class="hidden">
+        <div id="reservation-form">
+	        <form action="mailto:someone@example.com" method="post" id="tableReservationID" name="tableReservationName">
+	        <!-- This will open OUTLOOK or similar to send a mail, not ideal.
+	        Their solution currently sends the formdata to the server, which then forwards an email, for security.-->
+	        <!-- This is our placeholder. We can only update this with help from their site admin - whoever handles the backend -->
+					<h2>Din reservasjon: </h2> <br>
+          <div class="form-group">
+  					<label>Fornavn:</label>
+            <input type="text" name="firstName" id="firstNameID" size="16" pattern="[a-zA-Z]+[a-zA-Z ]+" title="Alphabetical characters only" required>
+          </div>
+          <div class="form-group">
+            <label>Etternavn:</label>
+            <input type="text" name="surname" id="surnameID" size="16" pattern="[a-zA-Z]+[a-zA-Z ]+" title="Alphabetical characters only" required>
+          </div>
+          <div class="form-group">
+            <label>Telefon:</label>
+            <input type="text" name="tlf" id="tlfID" size="16" pattern="[0-9]+[0-9 ]+" title="Numbers only" required>
+          </div>
+          <div class="form-group">
+            <label>E-mail:</label>
+            <input type="email" name="email" id="emailID" size="16" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Standard email format" placeholder="someone@email.com" required />
+          </div>
+          <br><br>
+          <div class="form-group">
+            <label>Dato:</label>
+            <input type="date" name="date" id="dateID" size="16" min="2016-01-01" title="After 2016-01-01" required/>
+          </div>
+          <div class="form-group">
+            <label>Klokken:</label>
+            <input type="time" name="time" id="timeID" required/>
+          </div>
+            <div class="form-group">
+  					<label>Personer:</label>
+            <input type="number" name="nrPeople" id="nrPeopleID" value="1" size="15" min="1" max="30" title="1 or more" required>
+          </div>
+          <div class="form-group">
+            <label>Spise?</label>
+            <select>
+              <option value="yes" selected>Ja</option>
+              <option value="some">Noen</option>
+              <option value="no">Nei</option>
+            </select>
+          </div>
+          <br> <br>
+          <div class="form-group">
+  					<label>Merknader:</label>
+            <textarea rows="5" cols="30"></textarea>
+          </div>
+					<br>
+          <div class="form-group">
+					  <p><span>&nbsp;</span><input type="checkbox" name="rules" id="rulesID" value="read" required/> Jeg har lest og forstått reglene.</p><br />
+          </div>
+          <br>
+          <div class="form-group">
+            <button type="submit" name="sendReservationEmail" value="Send Reservasjon" class="btn-reserved">Send Reservasjon</button>
+          </div>
+        </form>
+        </div>
+
+        <div id="reservationIndexID">
+  				<h2><em>Bordbestillings regler:</em></h2>
+          <ul>
+            <li>Avbestilling, øking eller redusering av plasser, senest 24 timer i forkant.</li>
+            <li>Reservasjonen vil bli fjernet 15 minutter etter reservasjonstid.</li>
+            <li>Hvis reservasjonen ikke er fulltallig etter 15 minutter, blir de resterende bordene mistet.</li>
+            <li>Reservering av antall plasser så nøyaktig som mulig (om det går an å be om det).</li>
+            <li>Reservasjoner til samme dag som reservasjonsbok må ringes inn etter kl.1400.</li>
+            <li>Om man bestiller før klokken 17:30, vil man kun ha bordet i 3 timer slik at vi kan ha en kveldssitting.</li>
+            <li>Reservasjonen er ikke gjyldig før vi har bekreftet den på E-mail, SMS eller på telefon!</li>
+            <li>Hvis du ikke får en E-mail som svar på denne reservasjonen, vær så snill ring oss.</li>
+          </ul>
+          <p><strong>NB: Vi åpner alle hverdager kl. 15:00 og fre-lør kl. 12:00</strong></p>
+  			</div>
+		  </div>
+    </section>
+
+    <!-- Section with about, contact and business Section -->
+    <section id="about-contact-business">
+      <!-- About Section -->
+      <div id="about">
+        <h1> Om oss </h1>
+        <div class="container-about">
+          <div id="about-text"></div>
+        </div> <!-- Container -->
+      </div> <!-- About Section -->
+
+      <!-- Contact Section -->
+      <div id="contact">
+        <h1> Kontakt oss </h1>
+        <div class="container-contact">
+          <ul class="contact-list">
+            <li>
+              <div class="contact-map">
+                <img src="Images/Icons/map.png" alt="Map">
+                <h3> Besøksadresse </h3>
+                <p> Prinsensgate 39, <br> N-7011 Trondheim </p>
+              </div>
+            </li>
+            <li>
+              <div class="contact-phone">
+                <img src="Images/Icons/phone.png" alt="Phone">
+                <h3> Telefon </h3>
+                <p> +47 73 51 75 15 </p>
+              </div>
+            </li>
+          </ul>
+          <ul class="contact-list">
+            <li>
+              <div class="contact-mail">
+                <img src="Images/Icons/email.png" alt="Email">
+                <h3> Postadresse </h3>
+                <p> Postboks 3343, <br> N-7427 Trondheim </p>
+              </div>
+            </li>
+            <li>
+              <div class="contact-mobile">
+                <img src="Images/Icons/mobile.png" alt="Mobile">
+                <h3> Vakttelefon </h3>
+                <p> +47 924 82 200 </p>
+              </div>
+            </li>
+          </ul>
+          <div class="organization">
+            <img src="Images/Icons/business.png" alt="Organisasjon">
+            <h3> Organisasjonsnummer </h3>
+            <p> NO 979 740 360 MVA </p>
+          </div>
+        </div> <!-- Container -->
+      </div> <!-- Contact Section -->
+
+      <!-- Business Section -->
+      <div id="business">
+        <h1> Business </h1>
+        <div class="container-business">
+          <div class="business-text">
+            <p>Trondhjem Mikrobryggeri AS eies i dag av Mikrobryggeriet AS,
+              som også eier Oslo Mikrobryggeri AS og Telemark Mikrobryggeri AS.</p>
+          </div>
+
+          <h2>Våre samarbeidspartnere</h2>
+          <div class="oslo">
+            <a href="http://www.omb.no/" target="_blank">
+              <img src="Images/LogoOMB.png" alt="Logo OMB" width="140" height="140">
+            </a>
+            <h3>Oslo <br> Mikrobryggeri</h3>
+          </div>
+          <div class="telemark">
+            <a href="http://www.telemarkmikrobryggeri.no/" target="_blank">
+              <img src="Images/LogoTM.png" alt="Logo TM" width="140" height="140">
+            </a>
+            <h3>Telemark <br> Mikrobryggeri</h3>
+          </div>
+        </div> <!-- Container -->
+      </div> <!-- Business Section -->
+    </section> <!-- About & Contact & Business Section -->
+
+    <!-- Google Maps Section-->
+    <section id="map">
+        <div class="map">
+          <div id="map_canvas"></div>
+          <div id="directionsPanel">
+            <div id="floating-panel">
+              <div id="travelButtons">
+                <i class="material-icons" id="directions-icon" style="font-size:40px">directions</i><!-- Icons from Google Maps API -->
+                <button type="button" id="car-btn" class="travel-btn" onclick="changeTravelMode(google.maps.DirectionsTravelMode.DRIVING);">
+                  <i class="material-icons" style="font-size:36px">directions_car</i> </button>
+                <button type="button" id="walk-btn" class="travel-btn" onclick="changeTravelMode(google.maps.DirectionsTravelMode.WALKING);">
+                  <i class="material-icons" style="font-size:36px">directions_walk</i></button>
+                <button type="button" id="bike-btn" class="travel-btn" onclick="changeTravelMode(google.maps.DirectionsTravelMode.BICYCLING);">
+                  <i class="material-icons" style="font-size:36px">directions_bike</i> </button>
+                <button type="button" id="transit-btn" class="travel-btn" onclick="changeTravelMode(google.maps.DirectionsTravelMode.TRANSIT);">
+                  <i class="material-icons" style="font-size:36px">directions_transit</i> </button>
+              </div>
+            </div>
+            <div id="route">
+             <form action="/Route" onsubmit="calcRoute();return false;" id="routeForm">
+               <input id="pac-input" class="controls" type="text" placeholder="Fra adresse...">
+               <input type="submit" class="submit-btn" value="Veibeskrivelse">
+             </form>
+           </div>
+          </div>
+        </div> <!-- map -->
+    </section> <!-- Google Maps Section -->
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Javscript -->
+    <script src="Scripts/edit/beerList.js"></script>
+    <script src="Scripts/edit/beerInfoBox.js"></script>
+    <script src="Scripts/edit/foodInfoBox.js"></script>
+    <script src="Scripts/edit/aboutText.js"></script>
+	<script src="Scripts/edit/openingHoursInfo.js"></script>
+    <script src="Scripts/edit/dishList.js"></script>
+
+    <script src="Scripts/navbar.js"></script>
+    <script src="Scripts/smooth-scroll.js"></script>
+    <script>smoothScroll.init();</script>
+    <script src="Scripts/dayOfTheWeek.js"></script>
+    <script src="Scripts/beermenu.js"></script>
+    <script src="Scripts/appearAnimation.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKI-QdPWyi1oWXdj4PntiV-Cct-woKNTE&libraries=places"></script>
+    <script src="Scripts/googlemaps.js"></script>
+  	<script src="Scripts/foodmenu.js"></script>
+  </body>
+</html>
