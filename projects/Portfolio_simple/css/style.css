@@ -1,0 +1,353 @@
+/* Stylesheet for Goosdeump.com */
+html,
+body { 
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: Boston,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #89899a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	background-color: #e6e6e6;
+	/*background-image: url("../img/bg.jpg");
+	background-size: 10px 20px;
+	background-repeat: repeat;*/
+}
+
+.container {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.content {
+	display: flex;
+	flex-wrap: wrap; justify-content: space-between;
+	margin-top: 50px;
+	border-bottom: 1px solid #e6e6e6; border-right: 1px solid #e6e6e6;
+}
+
+ul { padding: 0; margin: 0; }
+
+
+/*  NAVBAR  */
+#navbar {
+	display: flex;
+    justify-content: space-between;
+	width: 100%;
+	height: 200px;
+	list-style: none;
+	font-weight: 550;
+	font-size: 16px;
+}
+#navbar ul li:hover { border-bottom: 1px solid #fff; color: #00ace6; transition: color .2s ease-out; cursor: pointer;}
+.nav-logo, .nav-list {display: flex; }
+.nav-logo { float: left; align-items: center; }
+.nav-list { float: right; align-items: center; }
+
+.nav-logo a {
+	text-decoration: none;
+	color: #000;
+}
+
+.nav {
+	float: right;
+	width: auto;
+	text-align: right;
+	margin: 0;
+	padding: 0;
+}
+
+.nav li {
+	padding: 1px;
+	text-decoration: none; 
+	border-bottom: 1px solid transparent;
+	color: #999;
+	display: inline-block;
+	line-height: 2.5em;
+	margin-left: 1.5em;
+}
+.active-nav li { color: #00ace6; }
+.nav .icon {display: none;}
+
+
+.left-box, .right-box, .games-header, .box { border-bottom: 1px solid #fff; border-right: 1px solid #fff; }
+.left-box, .right-box, .games, .games-header, .box, .content, .games-header { box-shadow: 0 20px 60px -30px rgba(18,18,70,.5); }
+
+
+.left-box {
+	width: 70%;
+	height: 400px;
+	background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.slide-nav {
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+}
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  width: auto;
+  padding: 0;
+  margin: 0 15px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 32px;
+  transition: 0.6s ease;
+}
+
+.prev:hover, .next:hover { color: #008CBA; text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; }
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 3px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover { background-color: #008CBA; }
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.right-box {
+	width: 25%;
+	height: 300px;
+	align-self: center;
+	background-color: #fff;
+	background-image: url("../img/gooselogo.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}	
+
+#games, #comics {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+  	margin: 0;
+  	padding: 0;
+	width: 100%;
+	height: auto;
+	margin-top: 3%;
+	background-color: #fff;
+}
+
+.games-header, .comics-header {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	/*background-color: #008CBA;*/background-color: #008CBA;
+	border: 1px solid #fff;
+}
+.games-header h1, .comics-header h1 {
+	color: #fff;
+	align-self: center;
+}
+
+.games-progress {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #fff;
+}
+
+.games-wip, .games-latest {
+	width: 49.8%;
+	height: 30px;
+	border: 1px solid #fff;
+}
+
+.games-wip { background-color: #fff; }
+.games-latest { background-color: #fff; }
+
+.games-box, .comics-box {
+	position: relative;
+	margin: 3%;
+	background-color: #fff;
+}
+.games-box { width: 25%; height: 400px; }
+.comics-box { border: 1px solid #000; width: 23%; height: 300px; }
+.comics-box img {  }
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+.overlay-title {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  padding: 20px 0;
+  text-align: center;
+  z-index: 5;
+}
+
+.games-box:hover .overlay, .comics-box:hover .overlay { cursor: pointer;opacity: 1; }
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+/*  FOOTER  */
+.footer-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0 20px 0;
+}
+
+.social-icons { margin-right: 0; }
+
+.footer-navbar {
+  padding: 0;
+  margin-bottom: 20px;
+  list-style: none;
+  list-style-image: none;
+  text-decoration: none; 
+  align-self: flex-end;
+}
+.footer-navbar a { text-decoration: none; color: #999; }
+.footer-navbar li { display: inline-block; margin-left: 1.5em; }
+.footer-navbar li:hover { color: #00ace6; transition: color .2s ease-out; cursor: pointer;}
+.social-icons:hover { color: #00ace6; transition: color .2s ease-out; cursor: pointer; }
+
+.footer-logo { align-self: center; }
+.footer-logo img {
+  max-width: 100%;
+  max-height: 50px;
+  height: auto;
+}
+
+
+
+/*    RESPONSIVE    */
+
+/*  Container  */
+@media screen and (max-width: 700px) {.container{ width: 100%; }}
+
+/*  Navbar  */
+@media screen and (max-width: 700px) {
+	.nav-wrap { width: 100%; }
+	#navbar ul { width: 100%; }
+	.nav-logo { left: 0; top: 3%;}
+	.nav-list { float: none; }
+}
+
+@media screen and (max-width: 700px) {
+	.nav-logo { display: none; }
+	#navbar ul { text-align: left; float: none; }
+	#navbar { z-index: 100; position: fixed; background-color: #008CBA; height: auto; top: 0;}
+	.section { margin-top: 50px; }
+	.nav-list { align-items: baseline; }
+	#navbar ul li { color: #fff; }
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 700px) {
+	.responsivelogo { display: block; }
+	.nav a:not(:first-child) {display: none;}
+	.nav a.icon {
+		float: right;
+		display: block;
+		padding: 5px 10px 5px 5px;
+		color: #fff;
+		font-size: 22px;
+		text-decoration: none;
+		position: absolute;
+	    right: 0;
+	    top: 0;
+	}
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 700px) {
+	.nav.responsive {position: relative;}
+	.nav.responsive a.icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.nav.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.right-box { display: none }
+	.left-box { width: 100%; }
+	.games-box { width: 40%; }
+	.comics-box { width: 25%; }
+}
+
+@media screen and (max-width: 500px) {
+	.footer-wrap {
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.games-box { width: 100%; }
+	.comics-box {width: 100%;}
+
+}

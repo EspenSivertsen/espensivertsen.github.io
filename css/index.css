@@ -84,13 +84,19 @@ ul { padding: 0; margin: 0; }
 
 
 
-#games { width: 100%; }
+#games { width: 100%; height: 300px; }
+#games h1 {}
 #games img {
 	max-width: 200px;
 	width: 100%;
 	height: auto;
 	border: 1px solid #fffc36;
 	border-radius: 50%;
+	transition: transform .2s;
+}
+#games img:hover {
+	transform: scale(1.1);
+	border: 3px solid #fffc36;
 }
 
 #espen {
@@ -99,7 +105,8 @@ ul { padding: 0; margin: 0; }
 	width: 100%;
 }
 .card {
-	max-width: 450px;
+	max-width: 500px;
+	width: 450px;
 	height: 250px;
 	border: 1px solid #000;
 	background-color: #f2f2f2;
@@ -130,6 +137,10 @@ ul { padding: 0; margin: 0; }
 	margin: 0;
 	margin-top: 10px;
 }
+.card-title h3 {
+	margin-top: 0;
+	color: #808080;
+}
 .card-top {
 	display: flex;
 	width: 100%;
@@ -148,8 +159,6 @@ ul { padding: 0; margin: 0; }
 	list-style-position: inside;
     /*text-align: left; Both kinda look good */
 }
-
-
 
 /*  FOOTER  */
 #footer {}

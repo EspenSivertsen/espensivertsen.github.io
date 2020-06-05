@@ -1,0 +1,121 @@
+/* CSS stylesheet for website "What I am grateful for" */
+html, body {
+	font-family: "Arial";
+	text-align: center;
+	color: white;
+	background-image: url("../Images/background.jpg");
+	height: 100%;
+    margin: 0;
+}
+
+h1 {
+	text-shadow: 2px 2px #0d0d0d;
+}
+
+h2 {
+	font-size: 40px;
+	text-shadow: 2px 2px #0d0d0d;
+	border-bottom-style: groove;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+.coffee h1 {
+	font-size: 75px;
+	text-shadow: 5px 5px #0d0d0d;
+}
+
+/* Header */
+.header {}
+
+/* Front Page */
+.coffee {
+	min-height: 100%; 
+	margin: 10em;
+}
+
+/* Drinking Animation */
+#animation img {
+	display: none;
+	margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 3em;
+}
+#animation img:first-child {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 3em;
+}
+
+/* Drink Button */
+.drinkcoffee {
+	font-size: 22px;
+	margin-top: 2em;
+}
+
+.drink-button {
+	background-color: #838585;
+	border: none;
+	color: white;
+	padding: 15px 30px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 22px;
+}
+
+/* Section Coffee Types */
+.types p {
+	font-size: 17px;
+	line-height: 200%;
+}
+
+.wrapper {
+	display: inline-block;
+	text-align: left;
+	max-width: 30%;
+}
+
+.americano, .espresso, .cappuccino {
+	display: block;
+	overflow: hidden;
+	padding: 2em;
+}
+
+.americano, .cappuccino {
+	background: #838585;
+}
+.espresso {
+	background: #a5a7a7;
+}
+
+/* Coffee Types Images */
+.types img {
+	border-radius: 30%;
+}
+
+.americano img, .cappuccino img{
+	margin-left: 15em;
+	float: left;
+}
+.espresso img {
+	margin-right: 15em;
+	float: right;
+}
+
+/* Footer */
+.footer {
+	padding: 1em;
+	position: relative;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+/* <hr> tag */
+.linebreak {
+	border-color: grey;
+}

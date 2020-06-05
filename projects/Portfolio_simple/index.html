@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" type="image/png" href="gooseicon.ico">
+	<title>Goosdeump</title>
+
+	<!-- Custom styles for this template -->
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container">
+		<!-- Navbar -->
+		<div id="navbar" class="nav">
+			<div class="nav-logo">
+				<a href="index.html"><img src="img/logovertical.png" height="150px"></a>
+			</div>
+			<div class="nav-list">
+				<ul class="nav">
+					<a href="index.html" class="active-nav"><li>Home</li></a>
+					<a href="index.html#games"><li>Games</li></a>
+					<a href="index.html#comics"><li>Comics</li></a>
+					<a href="index.html#videos"><li>Videos</li></a>
+					<a href="www.beingadeveloper.com"><li>Blog</li></a>
+					<a href="javascript:void(0);" class="icon" onclick="responsenav()">&#9776;</a>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="content">
+
+			<div id="leftbox" class="left-box">
+				<div class="slideshow fade"></div>
+				<div class="slideshow fade"></div>
+				<div class="slideshow fade" style="height: 85%;"></div>
+
+				<div class="slide-nav">
+					<a class="prev" onclick="plusSlides(-1)">&#8249;</a>
+					<span class="dot" onclick="currentSlide(1)"></span> 
+					<span class="dot" onclick="currentSlide(2)"></span> 
+					<span class="dot" onclick="currentSlide(3)"></span>
+					<a class="next" onclick="plusSlides(1)">&#8250;</a>
+				</div>
+			</div>
+			<div class="right-box"></div>
+
+			<div id="games">
+				<div class="games-header"><h1>Games</h1></div>
+				<div class="games-progress">
+					<div class="games-wip"></div>
+					<div class="games-latest"></div>
+				</div>
+				<div class="games-box">
+					<img src="img/game1.png" class="poster" height="400px" width="100%" class="image">
+					<div class="overlay-title">Cup Your Ball</div> <!-- When hover over, change image from standard cup ball hanging down, to an image of ball inside of cup -->
+					<div class="overlay"><div class="text">Hello World</div></div>
+				</div>
+				<div class="games-box">
+					<img src="img/game2.jpg" class="poster" height="400px" width="100%" class="image">
+					<div class="overlay-title">Top Climb</div>
+					<div class="overlay"><div class="text">Hello World</div></div>
+				</div>
+				<div class="games-box">
+					<img src="img/game3.png" class="poster" height="400px" width="100%" class="image">
+					<div class="overlay-title">Kontorstol</div>
+					<div class="overlay"><div class="text">Hello World</div></div>
+				</div>
+				<div class="games-box">
+					<img src="img/game4.jpg" class="poster" height="400px" width="100%" class="image">
+					<div class="overlay-title">Kenny</div>
+					<div class="overlay"><div class="text">Hello World</div></div>
+				</div>
+				<div class="games-box">
+					<img src="img/game5.jpg" class="poster" height="400px" width="100%" class="image">
+					<div class="overlay-title">Pissbowl</div>
+					<div class="overlay"><div class="text">Hello World</div></div>
+				</div>
+				<div class="games-box">
+					<img src="img/game6.jpg" class="poster" height="400px" width="100%" class="image">
+					<div class="overlay-title">Rocket Soccer</div>
+					<div class="overlay"><div class="text">Hello World</div></div>
+				</div>
+			</div>
+
+			<div id="comics">
+				<div class="comics-header"><h1>Comics</h1></div>
+				<div class="comics-progress">
+					<div class="comics-wip"></div>
+					<div class="comics-latest"></div>
+				</div>
+				<div class="comics-box">
+					<img src="img/comic1.jpg" class="poster" height="300px" width="100%" class="image">
+					<div class="overlay-title">Planet Beta</div> <!-- When hover over, change image from standard cup ball hanging down, to an image of ball inside of cup -->
+					<div class="overlay"><div class="text">Hello World</div></div>
+				</div>
+				<div class="comics-box">
+					<img src="img/comic2.jpg" class="poster" height="300px" width="100%" class="image">
+					<div class="overlay-title">Morten Mørk</div>
+					<div class="overlay"><div class="text">Hello World</div></div>
+				</div>
+				<div class="comics-box">
+					<img src="img/comic3.jpg" class="poster" height="300px" width="100%" class="image">
+					<div class="overlay-title">Fotballidioten</div>
+					<div class="overlay"><div class="text">Hello World</div></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="footer">
+			<div class="footer-wrap">
+				<div class="footer-logo">
+					<a href="#"><img src="img/logohorizontal.png"></a>
+				</div>
+				<ul class="footer-navbar">
+					<a href="index.html#games"><li>Contact</li></a>
+					<a href="index.html#games"><li>Games</li></a>
+					<a href="index.html#games"><li>Blog</li></a>
+					<a href="#" class="social-icons facebook" style="margin-left: 1.5em">&#64;</a>
+					<a href="#" class="social-icons twitter">&#64;</a>
+					<a href="#" class="social-icons youtube">&#64;</a>
+				</ul>
+			</div>
+		</div>
+
+	</div> <!-- /container -->
+
+	<!-- Javascripts -->
+	<script src="js/navresponsive.js"></script>
+	<script src="js/bannershow.js"></script>
+	<script src="js/hideshow.js"></script>
+</body>
+</html>
