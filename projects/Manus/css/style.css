@@ -128,7 +128,7 @@ h1,h2,h3,h4 {
     flex-flow: column nowrap;
     justify-content: center;
   }
-  .script-box { width: 50%; margin: 1em auto; }
+  .script-box { width: 70%; margin: 1em auto; }
 }
 
 /* Smallererer screens */
