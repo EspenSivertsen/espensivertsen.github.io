@@ -12,6 +12,7 @@
 	<!-- Custom styles for this template -->
 	<link href="css/index.css" rel="stylesheet">
 	<script src="static/js/jquery-3.5.1.min.js"></script>
+	<script defer src="https://friconix.com/cdn/friconix.js"> </script> 
 </head>
 <body>
 
@@ -34,6 +35,7 @@
 	</div>
 
 	<section id="home" class="flex">
+		 <canvas id="canvas" width="100%" height="100%"></canvas>
 		<div class="flex"> 
 			<div class="text">
 				Hello, I'm <span class="highlight">Espen Sivertsen</span>.
@@ -69,13 +71,48 @@
 				<div class="card-bottom"></div>
 			</div>
 
-			<div class="flex row wrap">
-				<div class="about-me">
-					<div></div>
+			<div class="about-container flex row wrap">
+				<div class="about-me flex">
+					<div class="about-image"></div>
+					<div class="about-text">
+						<span class="about-header">Who am I?</span>
+						<p>
+							I'm positive and down to earth, with a
+							passion for technology and programming.
+							I live in Trondheim, Norway surrounded by nature
+							and I love creating things.<br>
+							<a href="#contact"><span class="about-contact">Let's get creative!</span></a>
+						</p>
+
+					</div>
 				</div>
 
-				<div class="about-skills">
-					<div></div>
+				<div class="about-menu">
+					<div class="about-navbar flex row">
+						<div class="about-navbar-link flex">SKILLS</div>
+						<div class="about-navbar-link flex">INTERESTS</div>
+						<div class="about-navbar-link flex">STATS</div>
+					</div>
+					<div class="about-skills">
+						<div class="skill">
+							<div class="skill-bar flex">Python</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex">Javascript</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex">C#</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex">React</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex">Angular</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex">Java</div>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -190,10 +227,12 @@
 				</a>
 			</ul>
 		</div>
+		<div class="copyright"> Espen Sivertsen © 2020 </div>
 	</section> <!-- /footer -->
 
 
 	<!-- Javascripts -->
+	<script src="static/js/canvas.js"></script>
 	<script src="static/js/navresponsive.js"></script>
 	<script src="static/js/smooth-scroll.js"></script>
 	<script src="static/js/sticky-navbar.js"></script>
