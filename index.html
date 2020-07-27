@@ -15,7 +15,6 @@
 	<script defer src="https://friconix.com/cdn/friconix.js"> </script> 
 </head>
 <body>
-
 	<!-- Navbar -->
 	<div id="navbar" class="nav">
 		<div class="container">
@@ -89,28 +88,84 @@
 
 				<div class="about-menu">
 					<div class="about-navbar flex row">
-						<div class="about-navbar-link flex">SKILLS</div>
-						<div class="about-navbar-link flex">INTERESTS</div>
-						<div class="about-navbar-link flex">STATS</div>
+						<div class="about-navbar-link flex" id="active-skill" onclick="showSkills()" style="background-color: #fffc36; color: #000;">SKILLS</div>
+						<div class="about-navbar-link flex" id="active-interest" onclick="showInterests()">INTERESTS</div>
+						<div class="about-navbar-link flex" id="active-stat" onclick="showStats()">STATS</div>
 					</div>
-					<div class="about-skills">
+					<div class="about-meter flex row">
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+						<div>4</div>
+						<div>5</div>
+					</div>
+					<div class="about-area" id="about-skills" style="display: block;">
 						<div class="skill">
-							<div class="skill-bar flex">Python</div>
+							<div class="skill-bar flex" style="margin-left: 60%;">Python</div>
 						</div>
 						<div class="skill">
-							<div class="skill-bar flex">Javascript</div>
+							<div class="skill-bar flex" style="margin-left: 80%;">HTML/CSS</div>
 						</div>
 						<div class="skill">
-							<div class="skill-bar flex">C#</div>
+							<div class="skill-bar flex" style="margin-left: 60%;">Javascript</div>
 						</div>
 						<div class="skill">
-							<div class="skill-bar flex">React</div>
+							<div class="skill-bar flex" style="margin-left: 60%;">C#</div>
 						</div>
 						<div class="skill">
-							<div class="skill-bar flex">Angular</div>
+							<div class="skill-bar flex" style="margin-left: 40%;">React</div>
 						</div>
 						<div class="skill">
-							<div class="skill-bar flex">Java</div>
+							<div class="skill-bar flex" style="margin-left: 20%;">Angular</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 40%;">Java</div>
+						</div>
+					</div>
+					<div class="about-area" id="about-interests" style="display: none;">
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 80%;">Gamedev</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 60%;">Gaming</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 80%;">Hiking</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 60%;">Drawing</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 80%;">Football</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 40%;">Writing</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 40%;">Photography</div>
+						</div>
+					</div>
+					<div class="about-area" id="about-stats" style="display: none;">
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 80%;">Honesty</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 80%;">Loyalty</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 60%;">Intelligence</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 40%;">Stamina</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 60%;">Charisma</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 80%;">Kindness</div>
+						</div>
+						<div class="skill">
+							<div class="skill-bar flex" style="margin-left: 80%;">Humility</div>
 						</div>
 					</div>
 				</div>
@@ -233,6 +288,7 @@
 
 	<!-- Javascripts -->
 	<script src="static/js/canvas.js"></script>
+	<script src="static/js/about-menu.js"></script>
 	<script src="static/js/navresponsive.js"></script>
 	<script src="static/js/smooth-scroll.js"></script>
 	<script src="static/js/sticky-navbar.js"></script>
