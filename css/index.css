@@ -538,6 +538,10 @@ input[type=submit]:hover {
 /*  Container  */
 @media screen and (max-width: 700px) {.container{ width: 100%; max-width: 100%;}}
 
+@media screen and (max-width: 1200px) {
+	.about-me, .about-menu { width: 90%; max-width: initial; }
+}
+
 /*  Navbar  */
 @media screen and (max-width: 700px) {
 	.nav-wrap { width: 100%; }
@@ -557,8 +561,10 @@ input[type=submit]:hover {
 	#navbar .container { margin: 0; }
 	#home .text { width: 80%; }
 	#about .about-container { flex-direction: column; }
-	#about .about-navbar { flex-direction: column; }
-	.about-text { width: 50%; margin: 0; }
+	.about-text { margin: 0; }
+	.about-me, .about-menu, .card { width: 90%; max-width: initial; }
+	.skill-bar { font-size: 12px; }
+	.card { display: none; }
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
