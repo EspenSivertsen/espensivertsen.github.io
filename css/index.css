@@ -202,7 +202,7 @@ ul { padding: 0; margin: 0; }
 }
 .about-header { font-size: 24px; }
 .about-text {
-	width: 75%;
+	width: 60%;
 	text-align: center;
 	word-wrap: break-word;
 	margin-bottom: 2em;
@@ -289,10 +289,10 @@ ul { padding: 0; margin: 0; }
 	height: 100%;
 	/*border-radius: 50%;*/
 }
-.card-title {
+/*.card-title {
 	margin: 0 1em;
 	color: #fff;
-}
+}*/
 .card-title h1 {
 	margin: 0;
 	margin-top: 10px;
@@ -315,6 +315,10 @@ ul { padding: 0; margin: 0; }
 	flex-direction: column;
 }
 
+.card-title {
+	background-color: #0000005e;
+	width: 100%;
+}
 
 #projects {
 	display: flex;
